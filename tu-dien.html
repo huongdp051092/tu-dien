@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Từ Điển</title>
+</head>
+<body>
+    <h1>Từ Điển</h1>
+    <input id="input" type="text"/>
+    <button type="button" onclick="dictionary()">Dịch</button><br>
+    <label id="result"></label>
+    <script>
+        function dictionary() {
+            let input = document.getElementById("input").value;
+            let english = ["function", "loop", "if", "else", "for", "while", "do", "button", "input", "output"];
+            let vietnamese = ["hàm", "vòng lặp", "nếu", "nếu không", "cho", "trong khi", "làm", "nút", "đầu vào", "đầu ra"];
+            for (let i = 0; i < english.length; i++) {
+                 if (english[i] == input) {
+                     document.getElementById("result").innerHTML = vietnamese[i];
+                     break;
+                 }
+                 else if (vietnamese[i] == input) {
+                     document.getElementById("result").innerHTML = english[i];
+                     break;
+                 }
+                 else
+                 {
+                     document.getElementById("result").innerHTML = "Không tìm thấy";
+                 }
+            }
+        }
+    </script>
+</body>
+</html>
